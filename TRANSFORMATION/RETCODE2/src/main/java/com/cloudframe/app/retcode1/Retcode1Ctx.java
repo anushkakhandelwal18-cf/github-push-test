@@ -16,8 +16,8 @@ import com.cloudframe.app.retcode1.dto.Parm;
 public class Retcode1Ctx implements ProgramContext, Cloneable {
     GlobalExecutorCtx globalCtx;
 
-    Work work;
     Parm parm;
+    Work work;
 
 
     private int rc;
@@ -51,17 +51,6 @@ public class Retcode1Ctx implements ProgramContext, Cloneable {
     }
 
 
-    public Work getWork() {
-        if (work == null) {
-            work = new Work();
-        }
-
-        return work;
-    }
-
-    public void setWork(Work work) {
-        this.work = work;
-    }
     public Parm getParm() {
         if (parm == null) {
             parm = new Parm();
@@ -72,6 +61,17 @@ public class Retcode1Ctx implements ProgramContext, Cloneable {
 
     public void setParm(Parm parm) {
         this.parm = parm;
+    }
+    public Work getWork() {
+        if (work == null) {
+            work = new Work();
+        }
+
+        return work;
+    }
+
+    public void setWork(Work work) {
+        this.work = work;
     }
 
 
@@ -84,17 +84,17 @@ public class Retcode1Ctx implements ProgramContext, Cloneable {
     @Override
     public int hashCode() {
         String str = "";
-        str += work.hashCode();
         str += parm.hashCode();
+        str += work.hashCode();
        return str.hashCode();
     }
 
     public Retcode1Ctx clone() {
         Retcode1Ctx cloneObj = new Retcode1Ctx();
-        cloneObj.work = new Work();
-        cloneObj.work.set(work.getClonedField());
         cloneObj.parm = new Parm();
         cloneObj.parm.set(parm.getClonedField());
+        cloneObj.work = new Work();
+        cloneObj.work.set(work.getClonedField());
         return cloneObj;
     }
 

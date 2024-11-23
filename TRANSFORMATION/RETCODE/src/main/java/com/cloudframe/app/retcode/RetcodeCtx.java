@@ -16,8 +16,8 @@ import com.cloudframe.app.retcode.dto.Work;
 public class RetcodeCtx implements ProgramContext, Cloneable {
     GlobalExecutorCtx globalCtx;
 
-    Parm parm;
     Work work;
+    Parm parm;
 
 
     private int rc;
@@ -51,17 +51,6 @@ public class RetcodeCtx implements ProgramContext, Cloneable {
     }
 
 
-    public Parm getParm() {
-        if (parm == null) {
-            parm = new Parm();
-        }
-
-        return parm;
-    }
-
-    public void setParm(Parm parm) {
-        this.parm = parm;
-    }
     public Work getWork() {
         if (work == null) {
             work = new Work();
@@ -72,6 +61,17 @@ public class RetcodeCtx implements ProgramContext, Cloneable {
 
     public void setWork(Work work) {
         this.work = work;
+    }
+    public Parm getParm() {
+        if (parm == null) {
+            parm = new Parm();
+        }
+
+        return parm;
+    }
+
+    public void setParm(Parm parm) {
+        this.parm = parm;
     }
 
 
@@ -84,17 +84,17 @@ public class RetcodeCtx implements ProgramContext, Cloneable {
     @Override
     public int hashCode() {
         String str = "";
-        str += parm.hashCode();
         str += work.hashCode();
+        str += parm.hashCode();
        return str.hashCode();
     }
 
     public RetcodeCtx clone() {
         RetcodeCtx cloneObj = new RetcodeCtx();
-        cloneObj.parm = new Parm();
-        cloneObj.parm.set(parm.getClonedField());
         cloneObj.work = new Work();
         cloneObj.work.set(work.getClonedField());
+        cloneObj.parm = new Parm();
+        cloneObj.parm.set(parm.getClonedField());
         return cloneObj;
     }
 
@@ -103,17 +103,8 @@ public class RetcodeCtx implements ProgramContext, Cloneable {
  *
  */
      public class ProcessInCtx implements Cloneable {
-     Parm parm = RetcodeCtx.this.getParm();
      Work work = RetcodeCtx.this.getWork();
-
-	/**
-	 *	Returns the value of parm
-	 *	@return parm
-	 */   
-	 public Parm getParm() {
-   	return parm;
-   }
-
+     Parm parm = RetcodeCtx.this.getParm();
 
 	/**
 	 *	Returns the value of retcode
@@ -131,6 +122,15 @@ public class RetcodeCtx implements ProgramContext, Cloneable {
    public void setRetcode(char[] value) throws CFException {
       work.setRetcode(value);
    } 
+
+	/**
+	 *	Returns the value of parm
+	 *	@return parm
+	 */   
+	 public Parm getParm() {
+   	return parm;
+   }
+
 
 
         public RetcodeCtx getRetcodeCtx() {
@@ -150,17 +150,17 @@ public class RetcodeCtx implements ProgramContext, Cloneable {
     @Override
     public int hashCode() {
         String str = "";
-        str += parm.hashCode();
         str += work.hashCode();
+        str += parm.hashCode();
        return str.hashCode();
     }
 
     public ProcessInCtx clone() {
         ProcessInCtx cloneObj = new ProcessInCtx();
-        cloneObj.parm = new Parm();
-        cloneObj.parm.set(parm.getClonedField());
         cloneObj.work = new Work();
         cloneObj.work.set(work.getClonedField());
+        cloneObj.parm = new Parm();
+        cloneObj.parm.set(parm.getClonedField());
         return cloneObj;
     }
 
@@ -170,8 +170,8 @@ public class RetcodeCtx implements ProgramContext, Cloneable {
             return new ProcessInCtx();
     }
      public class ProcessOutCtx implements Cloneable {
-     Parm parm = RetcodeCtx.this.getParm();
      Work work = RetcodeCtx.this.getWork();
+     Parm parm = RetcodeCtx.this.getParm();
 
 	/**
 	 *	Returns the value of parm
@@ -197,17 +197,17 @@ public class RetcodeCtx implements ProgramContext, Cloneable {
     @Override
     public int hashCode() {
         String str = "";
-        str += parm.hashCode();
         str += work.hashCode();
+        str += parm.hashCode();
        return str.hashCode();
     }
 
     public ProcessOutCtx clone() {
         ProcessOutCtx cloneObj = new ProcessOutCtx();
-        cloneObj.parm = new Parm();
-        cloneObj.parm.set(parm.getClonedField());
         cloneObj.work = new Work();
         cloneObj.work.set(work.getClonedField());
+        cloneObj.parm = new Parm();
+        cloneObj.parm.set(parm.getClonedField());
         return cloneObj;
     }
 
