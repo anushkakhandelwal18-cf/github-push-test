@@ -1,4 +1,4 @@
-package com.cloudframe.app.retcode1;
+package com.cloudframe.app.dto.retcode1;
 
 import com.cloudframe.app.dto.GlobalExecutorCtx;
 import com.cloudframe.app.dto.ProgramContext;
@@ -8,8 +8,8 @@ import java.math.BigDecimal;
 import java.util.List;
 import com.cloudframe.app.exception.CFException;
 
-import com.cloudframe.app.retcode1.dto.Work;
-import com.cloudframe.app.retcode1.dto.Parm;
+ 
+ 
 
 
 @Context
