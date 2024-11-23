@@ -107,15 +107,6 @@ public class Retcode2Ctx implements ProgramContext, Cloneable {
      Work work = Retcode2Ctx.this.getWork();
 
 	/**
-	 *	Returns the value of parm
-	 *	@return parm
-	 */   
-	 public Parm getParm() {
-   	return parm;
-   }
-
-
-	/**
 	 *	Returns the value of retcode
 	 *	@return retcode
 	 */
@@ -131,6 +122,15 @@ public class Retcode2Ctx implements ProgramContext, Cloneable {
    public void setRetcode(char[] value) throws CFException {
       work.setRetcode(value);
    } 
+
+	/**
+	 *	Returns the value of parm
+	 *	@return parm
+	 */   
+	 public Parm getParm() {
+   	return parm;
+   }
+
 
 
         public Retcode2Ctx getRetcode2Ctx() {
